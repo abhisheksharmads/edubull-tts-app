@@ -46,7 +46,7 @@ def generate_speech(text, model="tts-1", voice="alloy"):
         return None
 
 # Streamlit App Layout
-st.title("Text-to-Speech Generator")
+st.title("EduBull's Text-to-Speech Generator")
 st.write("Enter your text prompt below to generate speech using OpenAI's TTS API.")
 
 # Text input
