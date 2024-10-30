@@ -3,13 +3,9 @@ import streamlit as st
 import requests
 from pathlib import Path
 import uuid
-from dotenv import load_dotenv
 
-# Load environment variables from the .env file
-load_dotenv()
-
-# Retrieve the API key from environment variables
-api_key = os.getenv("OPENAI_API_KEY")
+# Access the OpenAI API key from Streamlit Secrets
+api_key = st.secrets["OPENAI_API_KEY"]
 
 # Define the directory to save the generated MP3 file
 # Use the current working directory for deployment compatibility
@@ -50,7 +46,7 @@ def generate_speech(text, model="tts-1", voice="alloy"):
         return None
 
 # Streamlit App Layout
-st.title("Text-to-Speech Generator")
+st.title("EduBull's Text-to-Speech Generator")
 st.write("Enter your text prompt below to generate speech using OpenAI's TTS API.")
 
 # Text input
