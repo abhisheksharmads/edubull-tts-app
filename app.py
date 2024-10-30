@@ -44,7 +44,9 @@ def generate_speech(text, model="tts-1", voice="alloy"):
         st.error("The response is not in MP3 format.")
         st.write("Response details:", response.text)  # Debugging information
         return None
-
+# Display the logo image
+logo_path = Path("edubull-icon.png")
+st.image(logo_path, width=200) 
 # Streamlit App Layout
 st.title("EduBull's Text-to-Speech Generator")
 st.write("Enter your text prompt below to generate speech using OpenAI's TTS API.")
