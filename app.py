@@ -4,6 +4,10 @@ import requests
 from pathlib import Path
 import uuid
 
+# Display the logo at the top of the app
+logo_path = Path("edubull-icon.png")  # Reference the logo directly in the parent folder
+st.image(logo_path, width=100)  # Adjust width as needed
+
 # Access the OpenAI API key from Streamlit Secrets
 api_key = st.secrets["OPENAI_API_KEY"]
 
