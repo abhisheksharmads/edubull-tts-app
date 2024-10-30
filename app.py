@@ -4,9 +4,15 @@ import requests
 from pathlib import Path
 import uuid
 
-# Display the logo at the top of the app
-logo_path = Path("edubull-icon.png")  # Reference the logo directly in the parent folder
-st.image(logo_path, width=100)  # Adjust width as needed
+# Determine the absolute path of the logo
+logo_path = Path("edubull-icon.png").resolve()
+st.write(f"Logo path: {logo_path}")  # Print the path to verify
+
+# Check if the file exists at that path
+if logo_path.is_file():
+    st.image(str(logo_path), width=100)  # Display the logo if found
+else:
+    st.warning("Logo image not found at the specified path.")
 
 # Access the OpenAI API key from Streamlit Secrets
 api_key = st.secrets["OPENAI_API_KEY"]
