@@ -6,7 +6,6 @@ import uuid
 
 # Determine the absolute path of the logo
 logo_path = Path("edubull-icon.png").resolve()
-st.write(f"Logo path: {logo_path}")  # Print the path to verify
 
 # Check if the file exists at that path
 if logo_path.is_file():
